@@ -19,9 +19,11 @@
 -- Table structure for table `billing_address`
 --
 
+use heroku_3ec710fc34f757e
+
 DROP TABLE IF EXISTS `billing_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `billing_address` (
   `id` bigint NOT NULL,
   `billing_address_city` varchar(255) DEFAULT NULL,
@@ -34,7 +36,7 @@ CREATE TABLE `billing_address` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKjg6ji2vsfuqlc9vhvy4yi449h` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +55,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `book`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8*/;
 CREATE TABLE `book` (
   `id` bigint NOT NULL,
   `active` bit(1) NOT NULL,
@@ -73,7 +75,7 @@ CREATE TABLE `book` (
   `shipping_weight` double NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +94,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `book_to_cart_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `book_to_cart_item` (
   `id` bigint NOT NULL,
   `book_id` bigint DEFAULT NULL,
@@ -100,7 +102,7 @@ CREATE TABLE `book_to_cart_item` (
   PRIMARY KEY (`id`),
   KEY `FK254kg9aacrs8uqa93ijc3garu` (`book_id`),
   KEY `FKbdyqr108hc7c06xtem0dhv9mk` (`cart_item_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +121,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cart_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `cart_item` (
   `id` bigint NOT NULL,
   `qty` int NOT NULL,
@@ -131,7 +133,7 @@ CREATE TABLE `cart_item` (
   KEY `FKis5hg85qbs5d91etr4mvd4tx6` (`book_id`),
   KEY `FKen9v41ihsnhcr0i7ivsd7i84c` (`order_id`),
   KEY `FKe89gjdx91fxnmkkssyoim8xfu` (`shopping_cart_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,10 +152,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `hibernate_sequence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `hibernate_sequence` (
   `next_val` bigint DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +174,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `password_reset_token`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `password_reset_token` (
   `id` bigint NOT NULL,
   `expiry_date` datetime DEFAULT NULL,
@@ -180,7 +182,7 @@ CREATE TABLE `password_reset_token` (
   `user_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK5lwtbncug84d4ero33v3cfxvl` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +200,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `payment` (
   `id` bigint NOT NULL,
   `card_name` varchar(255) DEFAULT NULL,
@@ -211,7 +213,7 @@ CREATE TABLE `payment` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKt7a73xusjdnnsuespcitb683h` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,12 +232,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `role` (
   `role_id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -254,7 +256,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipping_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `shipping_address` (
   `id` bigint NOT NULL,
   `shipping_address_city` varchar(255) DEFAULT NULL,
@@ -267,7 +269,7 @@ CREATE TABLE `shipping_address` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKatbgaqk1hhhhkyyuebylpeh7q` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,14 +288,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shopping_cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `shopping_cart` (
   `id` bigint NOT NULL,
   `grand_total` decimal(19,2) DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK254qp5akhuaaj9n5co4jww3fk` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,7 +314,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `id` bigint NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -323,7 +325,7 @@ CREATE TABLE `user` (
   `phone` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +344,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_billing`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user_billing` (
   `id` bigint NOT NULL,
   `user_billing_city` varchar(255) DEFAULT NULL,
@@ -355,7 +357,7 @@ CREATE TABLE `user_billing` (
   `user_payment_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK3v6hd7snyc3g9s72u41k1fydu` (`user_payment_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -373,7 +375,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user_order` (
   `id` bigint NOT NULL,
   `order_date` datetime DEFAULT NULL,
@@ -390,7 +392,7 @@ CREATE TABLE `user_order` (
   KEY `FKqjg5jrh5qwnhl2f9lk7n77454` (`payment_id`),
   KEY `FKo2lj94xaujs1se8whlhc37nj7` (`shipping_address_id`),
   KEY `FKj86u1x7csa8yd68ql2y1ibrou` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,7 +411,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_payment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user_payment` (
   `id` bigint NOT NULL,
   `card_name` varchar(255) DEFAULT NULL,
@@ -423,7 +425,7 @@ CREATE TABLE `user_payment` (
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK8fb9fr82lb1qk2cw55ito9rk6` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -441,7 +443,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user_role` (
   `user_role_id` bigint NOT NULL,
   `role_id` int DEFAULT NULL,
@@ -449,7 +451,7 @@ CREATE TABLE `user_role` (
   PRIMARY KEY (`user_role_id`),
   KEY `FKa68196081fvovjhkek5m97n3y` (`role_id`),
   KEY `FK859n2jvi8ivhui0rl0esws6o` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -468,7 +470,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_shipping`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `user_shipping` (
   `id` bigint NOT NULL,
   `user_shipping_city` varchar(255) DEFAULT NULL,
@@ -482,7 +484,7 @@ CREATE TABLE `user_shipping` (
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK9hidca5hndj9y0b5jb0xtpn9u` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
