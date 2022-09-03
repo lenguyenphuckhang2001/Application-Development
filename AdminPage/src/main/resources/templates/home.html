@@ -7,19 +7,10 @@
 <body>
 <div th:replace="common/header :: navbar"/>
 
-<h1 style="text-align:center; margin-top  : 30px;"><strong>STORE OWNER</strong></h1>
+<h1 style="text-align:center; margin-top  : 30px;"><strong>ADMIN PAGES</strong></h1>
 
 <br/><br/>
 <hr/>
-<div style="text-align:center; margin-top  : 40px;">
-    <a th:href="@{/book/add}">
-        <button
-                style="background-color: #4CAF50; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 36px;">
-            Add New Book
-        </button>
-    </a>
-
-</div>
 
 <div style="text-align:center; margin-top  : 40px;">
     <a th:href="@{/book/bookList}">
@@ -28,7 +19,15 @@
             View Book List
         </button>
     </a>
+</div>
 
+<div style="text-align:center; margin-top  : 40px;">
+    <a th:href="@{/book/add}">
+        <button
+                style="background-color: #4CAF50; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 36px;">
+            Request Add Book
+        </button>
+    </a>
 </div>
 <hr/>
 
