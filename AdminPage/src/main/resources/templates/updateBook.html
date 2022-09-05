@@ -11,17 +11,14 @@
               enctype="multipart/form-data">
             <fieldset>
                 <legend class="center-block">
-                    Update Book Information<span style="font-size: small"> * is a
-							required field</span>
+                    Update Book Information<span style="font-size: small"> * is a required field</span>
                 </legend>
 
                 <input hidden="hidden" name="id" th:value="${book.id}"/>
 
-
                 <!-- title -->
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="title">*Title</label>
-
                     <div class="col-md-8">
                         <input type="text" name="title" class="form-control" id="title"
                                th:value="${book.title}" required="required" placeholder="Title"/>
