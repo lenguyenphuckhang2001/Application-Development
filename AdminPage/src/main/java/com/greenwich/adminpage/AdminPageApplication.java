@@ -6,6 +6,7 @@ import com.greenwich.adminpage.domain.security.UserRole;
 import com.greenwich.adminpage.service.UserService;
 import com.greenwich.adminpage.utility.SecurityUtility;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-public class AdminPageApplication {
+public class AdminPageApplication implements CommandLineRunner {
 
     @Autowired
     private UserService userService;

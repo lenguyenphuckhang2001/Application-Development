@@ -1,6 +1,6 @@
 package com.greenwich.adminpage.domain.security;
 
-import com.greenwich.storeowner.domain.User;
+import com.greenwich.adminpage.domain.User;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
