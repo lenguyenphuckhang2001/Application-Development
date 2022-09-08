@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
 
     @Override
-    public User createUser(User user, Set<UserRole> userRoles) {
+    public void createUser(User user, Set<UserRole> userRoles) {
         User localUser = userRepository.findByUsername(user.getUsername());
 
         if (localUser != null) {
@@ -39,12 +41,28 @@ public class UserServiceImpl implements UserService {
             localUser = userRepository.save(user);
         }
 
-        return localUser;
     }
 
     @Override
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    @Override
+    public User findById(Long id) {
+        return userRepository.findById(id).orElseThrow(null);
+    }
+
+    @Override
+    public List<User> findALl() {
+        return (List<User>) userRepository.findAll();
+    }
+
+    @Override
+    public void disableUser(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(EntityNotFoundException::new);
+        user.setEnabled(false);
+        userRepository.save(user);
     }
 
 }
