@@ -12,8 +12,8 @@ public class RequestController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/disable/{userId}")
-    public void requestUser(@PathVariable Long userId) {
-        userService.disableUser(userId);
+    @RequestMapping("/disable/{bookId}")
+    public void requestUser(@PathVariable Long bookId) {
+        userService.disableUser(bookId);
     }
 }
